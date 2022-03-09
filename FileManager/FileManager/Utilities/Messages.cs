@@ -1,10 +1,10 @@
-﻿namespace FileManager
+﻿namespace FileManager.Utilities
 {
     public class Messages
     {
-        public const string titleApp = "File Manager!";
-
+        public const string path = "Path";
         public const string directory = "Directory";
+
         public const string mode = "Mode";
         public const string lastWriteTime = "LastWriteTime";
         public const string length = "Length";
@@ -22,12 +22,11 @@
         public const string separator13 = "-------------";
         public const string separator14 = "--------------";
 
-        public const string sectionDirectory = $"--------------- {directory} ---------------";
-        public const string sectionFolder = "--------------- Folder ---------------";
-        public const string sectionFile = "--------------- File ---------------";
-        public const string sectionExit = "--------------- Exit ---------------";
-
-
-
+        public static void printConsole(string msg, ConsoleColor consoleColor = ConsoleColor.White)
+        {
+            Console.ForegroundColor = consoleColor;
+            Console.WriteLine(msg);
+            Console.ForegroundColor = ConsoleColor.White;
+        }
     }
 }
