@@ -2,6 +2,30 @@
 {
     public class Messages
     {
+
+        public const string commandPwd = "pwd";
+        public const string commandDir = "dir";
+        public const string commandMkdir = "mkdir";
+        public const string commandRndir = "rndir";
+        public const string commandRmdir = "rmdir";
+
+        public const string HelpTextDir = "List current or any directory\n" +
+                                          "--> Use dir or dir <fullPathFolderName>\n" +
+                                          "--> Example: dir C:\\\\Test";
+
+        public const string HelpTextMkdir = "Create folder on directory\n" +
+                                          "--> Use mkdir <fullPath\\\\FolderName>\n" +
+                                          "--> Example: mkdir C:\\\\Test\\\\NewFolder";
+
+        public const string HelpTextRndir = "Rename folder on directory\n" +
+                                      "--> Use rndir <fullPath\\\\FolderName> <newFolderName>\n" +
+                                      "--> Example: rndir C:\\\\Test\\\\myFolder C:\\\\Test\\\\myFolderTest";
+
+        public const string HelpTextRmdir = "Remove folder on directory\n" +
+                                "--> Use rmdir <fullPath\\\\FolderName>\n" +
+                                "--> Example: rmdir C:\\\\Test\\\\myFolder";
+
+
         public const string path = "Path";
         public const string directory = "Directory";
 

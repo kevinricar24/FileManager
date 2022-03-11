@@ -9,7 +9,7 @@ namespace FileManager
 
         public static void MainMenu(string[] args)
         {
-            Parser.Default.ParseArguments<PwdCommand, DirCommand, CreateCommand, HelpCommand>(args)
+            Parser.Default.ParseArguments<PwdCommand, DirCommand, MkdirCommand, RndirCommand, RmdirCommand>(args)
                   .WithParsed<ICommand>(t => t.Execute(args));
         }
 

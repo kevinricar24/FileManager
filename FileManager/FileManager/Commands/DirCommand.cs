@@ -4,7 +4,7 @@ using FileManager.Utilities;
 
 namespace FileManager.Commands
 {
-    [Verb("dir", HelpText = "List Current or any Directory")]
+    [Verb(Messages.commandDir, HelpText = Messages.HelpTextDir)]
     public class DirCommand : ICommand
     {
         public void Execute(string[] args)

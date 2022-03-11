@@ -1,10 +1,11 @@
 ﻿using CommandLine;
 using FileManager.Commands.Interfaces;
+using FileManager.Utilities;
 
 namespace FileManager.Commands
 {
-    [Verb("create", HelpText = "Save all your commits to the cloud")]
-    public class CreateCommand : ICommand
+    [Verb(Messages.commandMkdir, HelpText=Messages.HelpTextMkdir)]
+    public class MkdirCommand : ICommand
     {
         public void Execute(string[] args)
         {
