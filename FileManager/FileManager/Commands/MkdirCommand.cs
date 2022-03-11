@@ -9,7 +9,27 @@ namespace FileManager.Commands
     {
         public void Execute(string[] args)
         {
-            Console.WriteLine("Executing create");
+            Console.WriteLine();
+
+            string fullPathName = string.Empty;
+
+            if (Validators.hasArgsValid(args, 2))
+            {
+                fullPathName = Path.GetFullPath(args[1]);
+
+                if (Validators.isPathValid(fullPathName))
+                {
+                    if (!Directory.Exists(fullPathName))
+                    {
+                        Directory.CreateDirectory(fullPathName);
+                        Messages.printConsole($"{Messages.directory} {fullPathName} created!", ConsoleColor.Green);
+                    }
+                    else
+                    {
+                        Messages.printConsole($"{Messages.directory} {fullPathName} exist!", ConsoleColor.Yellow);
+                    }
+                }
+            }
         }
     }
 }

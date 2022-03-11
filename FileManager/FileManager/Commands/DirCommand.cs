@@ -11,42 +11,54 @@ namespace FileManager.Commands
         {
             Console.WriteLine();
 
-            string myDir = Directory.GetCurrentDirectory();
-            if (args.Length-1 > 0)
+            string fullPathName = string.Empty;
+
+            if(Validators.hasArgsValid(args))
             {
-                if (!args[1].Equals(string.Empty))
+                fullPathName = Directory.GetCurrentDirectory();
+
+                if (args.Length == 2)
+                    fullPathName = Path.GetFullPath(args[1]);
+
+
+                if (Validators.isPathValid(fullPathName))
                 {
-                    myDir = args[1];
-                }
-            }
+                    if (!Directory.Exists(fullPathName))
+                    {
+                        Messages.printConsole($"{Messages.directory} {fullPathName} not exist!", ConsoleColor.Red);
+                    }
+                    else
+                    {
+                        string[] files = Directory.GetFiles(fullPathName);
 
-            string[] files = Directory.GetFiles(myDir);
+                        Messages.printConsole($"{Messages.directory}: {fullPathName}", ConsoleColor.Green);
+                        Console.WriteLine();
 
-            Messages.printConsole($"{Messages.directory}: {myDir}", ConsoleColor.Green);
-            Console.WriteLine();
+                        string formatSpacing = "{0,-15} {1,-20} {2,-10} {3, -10}";
+                        String dataTitle = String.Format(formatSpacing, Messages.mode, Messages.lastWriteTime, Messages.length, Messages.name);
+                        String dataSeparator = String.Format(formatSpacing, Messages.separator4, Messages.separator12, Messages.separator6, Messages.separator4);
 
-            string formatSpacing = "{0,-15} {1,-20} {2,-10} {3, -10}";
-            String dataTitle = String.Format(formatSpacing, Messages.mode, Messages.lastWriteTime, Messages.length, Messages.name);
-            String dataSeparator = String.Format(formatSpacing, Messages.separator4, Messages.separator12, Messages.separator6, Messages.separator4);
+                        Messages.printConsole(dataTitle, ConsoleColor.Green);
+                        Messages.printConsole(dataSeparator, ConsoleColor.Green);
 
-            Messages.printConsole(dataTitle, ConsoleColor.Green);
-            Messages.printConsole(dataSeparator, ConsoleColor.Green);
+                        if (files.Length > 0)
+                        {
+                            foreach (string file in files)
+                            {
+                                var fi = new FileInfo(file);
 
-            if (files.Length > 0)
-            {
-                foreach (string file in files)
-                {
-                    var fi = new FileInfo(file);
+                                FileDetails details = new FileDetails();
+                                details.mode = string.Empty;
+                                details.lastWriteTime = fi.LastWriteTime;
+                                details.length = fi.Length.ToString();
+                                details.name = file.Replace(fullPathName + "\\", String.Empty);
 
-                    FileDetails details = new FileDetails();
-                    details.mode = string.Empty;
-                    details.lastWriteTime = fi.LastWriteTime;
-                    details.length = fi.Length.ToString();
-                    details.name = file.Replace(myDir + "\\", String.Empty);
+                                String dataAttribute = String.Format(formatSpacing, details.mode, details.lastWriteTime, details.length, details.name);
+                                Messages.printConsole(dataAttribute, ConsoleColor.Green);
 
-                    String dataAttribute = String.Format(formatSpacing, details.mode, details.lastWriteTime, details.length, details.name);
-                    Messages.printConsole(dataAttribute, ConsoleColor.Green);
-
+                            }
+                        }
+                    }
                 }
             }
 
