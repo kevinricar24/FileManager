@@ -25,9 +25,13 @@
                                 "--> Use rmdir <fullPath\\\\FolderName>\n" +
                                 "--> Example: rmdir C:\\\\Test\\\\myFolder";
 
+        public const string ErrorInvalidArgs = "Invalid arguments";
+
         public const string ErrorValidationPath = "Please use a valid path, Examples:";
         public const string ErrorValidationPathRelative = "Relative: C:\\\\Test";
         public const string ErrorValidationPathAbsolute = "Absolute: .\\\\Test or ..\\\\otherFolder\\\\Test";
+
+        
 
 
         public const string path = "Path";

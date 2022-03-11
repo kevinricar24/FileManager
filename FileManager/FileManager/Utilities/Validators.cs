@@ -15,37 +15,13 @@
                     case CommandActions.pwd:
                         break;
                     case CommandActions.dir:
-                        foreach (var item in args)
-                        {
-                            if (item.Equals(string.Empty))
-                            {
-                                Messages.printConsole("invalid arguments", ConsoleColor.Red);
-                                return false;
-                            }
-                        }
-                        break;
+                        return IsArgsNullOrEmpty(args, Messages.HelpTextDir);
                     case CommandActions.mkdir:
-                        if (args.Length == count)
-                        {
-                            foreach (var item in args)
-                            {
-                                if (item.Equals(string.Empty))
-                                {
-                                    Messages.printConsole("invalid arguments", ConsoleColor.Red);
-                                    return false;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            Messages.printConsole("invalid arguments", ConsoleColor.Red);
-                            return false;
-                        }
-                        break;
+                        return IsArgsValid(args, count, Messages.HelpTextMkdir);
                     case CommandActions.rndir:
-                        break;
+                        return IsArgsValid(args, count, Messages.HelpTextRndir);
                     case CommandActions.rmdir:
-                        break;
+                        return IsArgsValid(args, count, Messages.HelpTextRmdir);
                     default:
                         break;
                 }
@@ -55,20 +31,37 @@
             return false;
         }
 
-        private static bool isArgsNullOrEmpty(string[] args)
+        private static bool IsArgsValid(string[] args, int count, string error)
+        {
+            if (args.Length == count)
+            {
+                return IsArgsNullOrEmpty(args, error);
+            }
+            else
+            {
+                Messages.printConsole(Messages.ErrorInvalidArgs, ConsoleColor.Red);
+                Console.WriteLine();
+                Messages.printConsole(error, ConsoleColor.Yellow);
+                return false;
+            }
+        }
+
+        private static bool IsArgsNullOrEmpty(string[] args, string error)
         {
             foreach (var item in args)
             {
                 if (item.Equals(string.Empty))
                 {
-                    Messages.printConsole("invalid arguments", ConsoleColor.Red);
+                    Messages.printConsole(Messages.ErrorInvalidArgs, ConsoleColor.Red);
+                    Console.WriteLine();
+                    Messages.printConsole(error, ConsoleColor.Yellow);
                     return false;
                 }
             }
             return true;
         }
 
-        public static bool isPathValid(string path)
+        public static bool IsPathValid(string path)
         {
             if (Path.IsPathRooted(path))
                 return true;

@@ -21,7 +21,7 @@ namespace FileManager.Commands
                     fullPathName = Path.GetFullPath(args[1]);
 
 
-                if (Validators.isPathValid(fullPathName))
+                if (Validators.IsPathValid(fullPathName))
                 {
                     if (!Directory.Exists(fullPathName))
                     {
