@@ -9,6 +9,8 @@
         public const string commandRndir = "rndir";
         public const string commandRmdir = "rmdir";
 
+        public const string HelpTextPwd = "Show Current Directory";
+
         public const string HelpTextDir = "List current or any directory\n" +
                                           "--> Use dir or dir <fullPathFolderName>\n" +
                                           "--> Example: dir C:\\\\Test";

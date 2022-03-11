@@ -3,7 +3,7 @@
     public class Validators
     {
 
-        public static bool hasArgsValid(string[] args, int count=0)
+        public static bool HasArgsValid(string[] args, int count=0)
         {
             if (args.Length > 0)
             {

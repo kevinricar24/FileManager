@@ -3,5 +3,5 @@
 using FileManager;
 //OptionsMenu.MainMenu(args);
 
-string[] arguments = { "mkdir", "" };
+string[] arguments = { "rmdir", @"..\polo" };
 OptionsMenu.MainMenu(arguments);

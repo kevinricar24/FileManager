@@ -13,7 +13,7 @@ namespace FileManager.Commands
 
             string fullPathName = string.Empty;
 
-            if(Validators.hasArgsValid(args))
+            if(Validators.HasArgsValid(args))
             {
                 fullPathName = Directory.GetCurrentDirectory();
 

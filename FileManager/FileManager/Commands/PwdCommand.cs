@@ -4,7 +4,7 @@ using FileManager.Utilities;
 
 namespace FileManager.Commands
 {
-    [Verb("pwd", HelpText = "Show Current Directory")]
+    [Verb(Messages.commandPwd, HelpText = Messages.HelpTextPwd)]
     public class PwdCommand : ICommand
     {
         
