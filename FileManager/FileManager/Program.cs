@@ -4,5 +4,5 @@ using FileManager;
 //OptionsMenu.MainMenu(args);
 
 //string[] arguments = { "movedir", @"C:\Test\Kevin1" };
-string[] arguments = { "rnfile", @"C:\Test1\locuras.txt", "locurasnnnnnnnnnn"};
+string[] arguments = { "copyfile", @"C:\Test1\locuras.txt", @"C:\Test1\NivelKevin" };
 OptionsMenu.MainMenu(arguments);
