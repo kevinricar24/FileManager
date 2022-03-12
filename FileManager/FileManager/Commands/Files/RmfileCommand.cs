@@ -2,10 +2,11 @@
 using FileManager.Commands.Interfaces;
 using FileManager.Utilities;
 
-namespace FileManager.Commands.Directories
+
+namespace FileManager.Commands.Files
 {
-    [Verb(Messages.commandRmdir, HelpText = Messages.HelpTextRmdir)]
-    public class RmdirCommand : ICommand
+    [Verb(Messages.commandRmfile, HelpText = Messages.HelpTextRmfile)]
+    public class RmfileCommand : ICommand
     {
         public void Execute(string[] args)
         {
@@ -17,18 +18,18 @@ namespace FileManager.Commands.Directories
             {
                 fullPathName = Path.GetFullPath(args[1]);
 
-                if (Validators.IsPathValid(fullPathName))
+                if (Validators.IsPathFileValid(fullPathName))
                 {
-                    if (!Directory.Exists(fullPathName))
+                    if (!File.Exists(fullPathName))
                     {
-                        Messages.printConsole($"{Messages.directory} {fullPathName} not exist!", ConsoleColor.Red);
+                        Messages.printConsole($"{Messages.file} {fullPathName} not exist!", ConsoleColor.Red);
                     }
                     else
                     {
                         try
                         {
-                            Directory.Delete(fullPathName);
-                            Messages.printConsole($"{Messages.directory} {fullPathName} removed!", ConsoleColor.Green);
+                            File.Delete(fullPathName);
+                            Messages.printConsole($"{Messages.file} {fullPathName} removed!", ConsoleColor.Green);
                         }
                         catch (Exception ex)
                         {

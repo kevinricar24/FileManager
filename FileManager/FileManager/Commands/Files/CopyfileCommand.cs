@@ -23,15 +23,22 @@ namespace FileManager.Commands.Files
                 {
                     if (File.Exists(fullPathNameSource))
                     {
-                        try
+                        if (Directory.Exists(fullPathNameDestination))
                         {
-                            string fullPathNameSourceExt = Path.Combine(fullPathNameDestination, Path.GetFileName(fullPathNameSource)); 
-                            File.Copy(fullPathNameSource, fullPathNameSourceExt);
-                            Messages.printConsole($"{Messages.file} {fullPathNameSource} copied to {fullPathNameDestination}", ConsoleColor.Green);
+                            try
+                            {
+                                string fullPathNameSourceExt = Path.Combine(fullPathNameDestination, Path.GetFileName(fullPathNameSource));
+                                File.Copy(fullPathNameSource, fullPathNameSourceExt);
+                                Messages.printConsole($"{Messages.file} {fullPathNameSource} copied to {fullPathNameDestination}", ConsoleColor.Green);
+                            }
+                            catch (Exception ex)
+                            {
+                                Messages.printConsole($"{ex.Message}", ConsoleColor.Red);
+                            }
                         }
-                        catch (Exception ex)
+                        else
                         {
-                            Messages.printConsole($"{ex.Message}", ConsoleColor.Red);
+                            Messages.printConsole($"{Messages.directory} {fullPathNameDestination} not exist!", ConsoleColor.Red);
                         }
                     }
                     else

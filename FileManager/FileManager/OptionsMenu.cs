@@ -11,7 +11,7 @@ namespace FileManager
         public static void MainMenu(string[] args)
         {
             Parser.Default.ParseArguments<PwdCommand, DirCommand, MkdirCommand, RndirCommand, CopydirCommand, MovedirCommand, RmdirCommand,
-                                                                  MkfileCommand, RnfileCommand, CopyfileCommand, MovefileCommand>(args)
+                                                                  MkfileCommand, RnfileCommand, CopyfileCommand, MovefileCommand, RmfileCommand>(args)
                   .WithParsed<ICommand>(t => t.Execute(args));
         }
 

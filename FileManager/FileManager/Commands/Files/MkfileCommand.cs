@@ -19,16 +19,25 @@ namespace FileManager.Commands.Files
 
                 if (Validators.IsPathFileValid(fullPathName))
                 {
-                    if (!Directory.Exists(fullPathName))
+                    if (!File.Exists(fullPathName))
                     {
-                        try
+                        string dir = Path.GetDirectoryName(fullPathName);
+                        if (Directory.Exists(dir))
                         {
-                            File.Create(fullPathName);
-                            Messages.printConsole($"{Messages.file} {fullPathName} created!", ConsoleColor.Green);
+                            try
+                            {
+                                //Directory.CreateDirectory(Path.GetDirectoryName(fullPathName));
+                                File.Create(fullPathName);
+                                Messages.printConsole($"{Messages.file} {fullPathName} created!", ConsoleColor.Green);
+                            }
+                            catch (Exception ex)
+                            {
+                                Messages.printConsole($"{ex.Message}", ConsoleColor.Red);
+                            }
                         }
-                        catch (Exception ex)
+                        else
                         {
-                            Messages.printConsole($"{ex.Message}", ConsoleColor.Red);
+                            Messages.printConsole($"{Messages.directory} {dir} not exist!", ConsoleColor.Yellow);
                         }
                     }
                     else
