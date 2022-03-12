@@ -1,10 +1,8 @@
-﻿using CommandLine;
-using FileManager.Commands.Interfaces;
+﻿using FileManager.Commands.Interfaces;
 using FileManager.Utilities;
 
-namespace FileManager.Commands
+namespace FileManager.Commands.Directories
 {
-    [Verb(Messages.commandDir, HelpText = Messages.HelpTextDir)]
     public class DirCommand : ICommand
     {
         public void Execute(string[] args)
@@ -13,7 +11,7 @@ namespace FileManager.Commands
 
             string fullPathName = string.Empty;
 
-            if(Validators.HasArgsValid(args))
+            if (Validators.HasArgsValid(args))
             {
                 fullPathName = Directory.GetCurrentDirectory();
 
@@ -35,8 +33,8 @@ namespace FileManager.Commands
                         Console.WriteLine();
 
                         string formatSpacing = "{0,-15} {1,-20} {2,-10} {3, -10}";
-                        String dataTitle = String.Format(formatSpacing, Messages.mode, Messages.lastWriteTime, Messages.length, Messages.name);
-                        String dataSeparator = String.Format(formatSpacing, Messages.separator4, Messages.separator12, Messages.separator6, Messages.separator4);
+                        string dataTitle = string.Format(formatSpacing, Messages.mode, Messages.lastWriteTime, Messages.length, Messages.name);
+                        string dataSeparator = string.Format(formatSpacing, Messages.separator4, Messages.separator12, Messages.separator6, Messages.separator4);
 
                         Messages.printConsole(dataTitle, ConsoleColor.Green);
                         Messages.printConsole(dataSeparator, ConsoleColor.Green);
@@ -51,9 +49,9 @@ namespace FileManager.Commands
                                 details.mode = string.Empty;
                                 details.lastWriteTime = fi.LastWriteTime;
                                 details.length = fi.Length.ToString();
-                                details.name = file.Replace(fullPathName + "\\", String.Empty);
+                                details.name = file.Replace(fullPathName + "\\", string.Empty);
 
-                                String dataAttribute = String.Format(formatSpacing, details.mode, details.lastWriteTime, details.length, details.name);
+                                string dataAttribute = string.Format(formatSpacing, details.mode, details.lastWriteTime, details.length, details.name);
                                 Messages.printConsole(dataAttribute, ConsoleColor.Green);
 
                             }

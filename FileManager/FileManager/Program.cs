@@ -3,5 +3,6 @@
 using FileManager;
 //OptionsMenu.MainMenu(args);
 
-string[] arguments = { "rmdir", @"..\polo" };
+//string[] arguments = { "movedir", @"C:\Test\Kevin1" };
+string[] arguments = { "copydir", @"C:\Test1\NivelKevin", @"C:\Test2" };
 OptionsMenu.MainMenu(arguments);

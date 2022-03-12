@@ -20,6 +20,10 @@
                         return IsArgsValid(args, count, Messages.HelpTextMkdir);
                     case CommandActions.rndir:
                         return IsArgsValid(args, count, Messages.HelpTextRndir);
+                    case CommandActions.copydir:
+                        return IsArgsValid(args, count, Messages.HelpTextCopydir);
+                    case CommandActions.movedir:
+                        return IsArgsValid(args, count, Messages.HelpTextMovedir);
                     case CommandActions.rmdir:
                         return IsArgsValid(args, count, Messages.HelpTextRmdir);
                     default:

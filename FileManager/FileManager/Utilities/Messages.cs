@@ -7,6 +7,8 @@
         public const string commandDir = "dir";
         public const string commandMkdir = "mkdir";
         public const string commandRndir = "rndir";
+        public const string commandCopydir = "copydir";
+        public const string commandMovedir = "movedir";
         public const string commandRmdir = "rmdir";
 
         public const string HelpTextPwd = "Show Current Directory";
@@ -21,7 +23,15 @@
 
         public const string HelpTextRndir = "Rename folder on directory\n" +
                                       "--> Use rndir <fullPath\\\\FolderName> <newFolderName>\n" +
-                                      "--> Example: rndir C:\\\\Test\\\\myFolder C:\\\\Test\\\\myFolderTest";
+                                      "--> Example: rndir C:\\\\Test\\\\myFolder myFolderTest";
+
+        public const string HelpTextCopydir = "Copy folder on directory\n" +
+                                      "--> Use movedir <fullPath\\\\FolderNameSource> <fullPath\\\\FolderNameDestination>\n" +
+                                      "--> Example: movedir C:\\\\Test\\\\myFolder C:\\\\Test\\\\myFolderTest";
+
+        public const string HelpTextMovedir = "Move folder on directory\n" +
+                                      "--> Use copydir <fullPath\\\\FolderNameSource> <fullPath\\\\FolderNameDestination>\n" +
+                                      "--> Example: copydir C:\\\\Test\\\\myFolder C:\\\\Test\\\\myFolderTest";
 
         public const string HelpTextRmdir = "Remove folder on directory\n" +
                                 "--> Use rmdir <fullPath\\\\FolderName>\n" +
@@ -33,11 +43,13 @@
         public const string ErrorValidationPathRelative = "Relative: C:\\\\Test";
         public const string ErrorValidationPathAbsolute = "Absolute: .\\\\Test or ..\\\\otherFolder\\\\Test";
 
-        
+        public const string ErrorValidationFolderName = "Please use only forlder name\n Example: Test";
+
 
 
         public const string path = "Path";
         public const string directory = "Directory";
+        public const string error = "Error";
 
         public const string mode = "Mode";
         public const string lastWriteTime = "LastWriteTime";

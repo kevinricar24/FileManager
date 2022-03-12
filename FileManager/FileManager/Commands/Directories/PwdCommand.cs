@@ -2,12 +2,12 @@
 using FileManager.Commands.Interfaces;
 using FileManager.Utilities;
 
-namespace FileManager.Commands
+namespace FileManager.Commands.Directories
 {
     [Verb(Messages.commandPwd, HelpText = Messages.HelpTextPwd)]
     public class PwdCommand : ICommand
     {
-        
+
         public void Execute(string[] args)
         {
             Console.WriteLine();

@@ -2,7 +2,7 @@
 using FileManager.Commands.Interfaces;
 using FileManager.Utilities;
 
-namespace FileManager.Commands
+namespace FileManager.Commands.Directories
 {
     [Verb(Messages.commandRmdir, HelpText = Messages.HelpTextRmdir)]
     public class RmdirCommand : ICommand
@@ -25,8 +25,15 @@ namespace FileManager.Commands
                     }
                     else
                     {
-                        Directory.Delete(fullPathName);
-                        Messages.printConsole($"{Messages.directory} {fullPathName} removed!", ConsoleColor.Yellow);
+                        try
+                        {
+                            Directory.Delete(fullPathName);
+                            Messages.printConsole($"{Messages.directory} {fullPathName} removed!", ConsoleColor.Yellow);
+                        }
+                        catch (Exception ex)
+                        {
+                            Messages.printConsole($"{ex.Message}", ConsoleColor.Red);
+                        }
                     }
                 }
             }

@@ -2,9 +2,9 @@
 using FileManager.Commands.Interfaces;
 using FileManager.Utilities;
 
-namespace FileManager.Commands
+namespace FileManager.Commands.Directories
 {
-    [Verb(Messages.commandMkdir, HelpText=Messages.HelpTextMkdir)]
+    [Verb(Messages.commandMkdir, HelpText = Messages.HelpTextMkdir)]
     public class MkdirCommand : ICommand
     {
         public void Execute(string[] args)
@@ -21,8 +21,15 @@ namespace FileManager.Commands
                 {
                     if (!Directory.Exists(fullPathName))
                     {
-                        Directory.CreateDirectory(fullPathName);
-                        Messages.printConsole($"{Messages.directory} {fullPathName} created!", ConsoleColor.Green);
+                        try
+                        {
+                            Directory.CreateDirectory(fullPathName);
+                            Messages.printConsole($"{Messages.directory} {fullPathName} created!", ConsoleColor.Green);
+                        }
+                        catch (Exception ex)
+                        {
+                            Messages.printConsole($"{ex.Message}", ConsoleColor.Red);
+                        }
                     }
                     else
                     {
