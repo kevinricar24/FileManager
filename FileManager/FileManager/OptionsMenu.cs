@@ -1,5 +1,6 @@
 ﻿using CommandLine;
 using FileManager.Commands.Directories;
+using FileManager.Commands.Files;
 using FileManager.Commands.Interfaces;
 
 namespace FileManager
@@ -9,7 +10,8 @@ namespace FileManager
 
         public static void MainMenu(string[] args)
         {
-            Parser.Default.ParseArguments<PwdCommand, DirCommand, MkdirCommand, RndirCommand, CopydirCommand, MovedirCommand, RmdirCommand>(args)
+            Parser.Default.ParseArguments<PwdCommand, DirCommand, MkdirCommand, RndirCommand, CopydirCommand, MovedirCommand, RmdirCommand,
+                                                                  MkfileCommand, RnfileCommand>(args)
                   .WithParsed<ICommand>(t => t.Execute(args));
         }
 

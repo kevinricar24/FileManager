@@ -37,7 +37,7 @@ namespace FileManager.Commands.Directories
                                 if (os_info.Platform.ToString().ToLower().Contains("win"))
                                 {
                                     FileSystem.Rename(fullPathNameSource, fullPathNameDestination);
-                                    Messages.printConsole($"{Messages.directory} {fullPathNameSource} moved to {fullPathNameDestination}", ConsoleColor.Green);
+                                    Messages.printConsole($"{Messages.directory} {fullPathNameSource} renamed to {fullPathNameDestination}", ConsoleColor.Green);
                                 }
                                 else
                                 {

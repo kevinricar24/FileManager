@@ -12,6 +12,7 @@
 
                 switch (commands)
                 {
+                    //Directories
                     case CommandActions.pwd:
                         break;
                     case CommandActions.dir:
@@ -26,6 +27,19 @@
                         return IsArgsValid(args, count, Messages.HelpTextMovedir);
                     case CommandActions.rmdir:
                         return IsArgsValid(args, count, Messages.HelpTextRmdir);
+
+                    //Files
+                    case CommandActions.mkfile:
+                        return IsArgsValid(args, count, Messages.HelpTextMkfile);
+                    case CommandActions.rnfile:
+                        return IsArgsValid(args, count, Messages.HelpTextRnfile);
+                    case CommandActions.copyfile:
+                        return IsArgsValid(args, count, Messages.HelpTextCopyfile);
+                    case CommandActions.movefile:
+                        return IsArgsValid(args, count, Messages.HelpTextMovefile);
+                    case CommandActions.rmfile:
+                        return IsArgsValid(args, count, Messages.HelpTextRmfile);
+   
                     default:
                         break;
                 }
@@ -73,6 +87,21 @@
             Messages.printConsole(Messages.ErrorValidationPath, ConsoleColor.Red);
             Messages.printConsole(Messages.ErrorValidationPathRelative, ConsoleColor.Red);
             Messages.printConsole(Messages.ErrorValidationPathAbsolute, ConsoleColor.Red);
+
+            return false;
+        }
+
+        public static bool IsPathFileValid(string path)
+        {
+            if (Path.IsPathRooted(path))
+            {
+                if (Path.GetExtension(path).Equals(Messages.extension))
+                    return true;
+            }
+            
+            Messages.printConsole(Messages.ErrorValidationPathFile, ConsoleColor.Red);
+            Messages.printConsole(Messages.ErrorValidationPathFileRelative, ConsoleColor.Red);
+            Messages.printConsole(Messages.ErrorValidationPathFileAbsolute, ConsoleColor.Red);
 
             return false;
         }
