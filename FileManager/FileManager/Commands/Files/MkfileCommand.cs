@@ -26,7 +26,6 @@ namespace FileManager.Commands.Files
                         {
                             try
                             {
-                                //Directory.CreateDirectory(Path.GetDirectoryName(fullPathName));
                                 File.Create(fullPathName);
                                 Messages.printConsole($"{Messages.file} {fullPathName} created!", ConsoleColor.Green);
                             }

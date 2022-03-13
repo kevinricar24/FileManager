@@ -28,7 +28,7 @@ namespace FileManager.Commands.Files
                             try
                             {
                                 string fullPathNameSourceExt = Path.Combine(fullPathNameDestination, Path.GetFileName(fullPathNameSource));
-                                File.Copy(fullPathNameSource, fullPathNameSourceExt);
+                                File.Copy(fullPathNameSource, fullPathNameSourceExt, true);
                                 Messages.printConsole($"{Messages.file} {fullPathNameSource} copied to {fullPathNameDestination}", ConsoleColor.Green);
                             }
                             catch (Exception ex)
