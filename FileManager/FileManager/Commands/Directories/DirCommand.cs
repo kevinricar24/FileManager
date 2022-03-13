@@ -1,8 +1,10 @@
-﻿using FileManager.Commands.Interfaces;
+﻿using CommandLine;
+using FileManager.Commands.Interfaces;
 using FileManager.Utilities;
 
 namespace FileManager.Commands.Directories
 {
+    [Verb(Messages.commandDir, HelpText = Messages.HelpTextDir)]
     public class DirCommand : ICommand
     {
         public void Execute(string[] args)
