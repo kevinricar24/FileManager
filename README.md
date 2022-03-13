@@ -1,3 +1,11 @@
+# How to run
+
+1. Open windows terminal
+2. Set your directory on the FileManager solution
+   --> cd C:\<YourLocalMachine>\FileManager\FileManager\FileManager
+3. Excute any command, could you show all commands using:
+   --> dotnet run help
+
 # FileManager
 File manager CRUD operations in .NET 6
 
