@@ -44,28 +44,28 @@
         public const string HelpTextPwd = "Show Current Directory";
 
         public const string HelpTextDir = "List current or any directory\n" +
-                                          "--> Use dir or dir <fullPathFolderName>\n" +
-                                          "--> Example: dir C:\\\\Test";
+                                          "--> Use dotnet run dir or dotnet run dir <fullPathFolderName>\n" +
+                                          "--> Example: dotnet run dir C:\\\\Test";
 
         public const string HelpTextMkdir = "Create folder on directory\n" +
-                                          "--> Use mkdir <fullPath\\\\FolderName>\n" +
-                                          "--> Example: mkdir C:\\\\Test\\\\NewFolder";
+                                          "--> Use dotnet run mkdir <fullPath\\\\FolderName>\n" +
+                                          "--> Example: dotnet run mkdir C:\\\\Test\\\\NewFolder";
 
         public const string HelpTextRndir = "Rename folder on directory\n" +
-                                      "--> Use rndir <fullPath\\\\FolderName> <newFolderName>\n" +
-                                      "--> Example: rndir C:\\\\Test\\\\myFolder myFolderTest";
+                                      "--> Use dotnet run rndir <fullPath\\\\FolderName> <newFolderName>\n" +
+                                      "--> Example: dotnet run rndir C:\\\\Test\\\\myFolder myFolderTest";
 
         public const string HelpTextCopydir = "Copy folder on directory\n" +
-                                      "--> Use copydir <fullPath\\\\FolderNameSource> <fullPath\\\\FolderNameDestination>\n" +
-                                      "--> Example: copydir C:\\\\Test\\\\myFolder C:\\\\Test\\\\myFolderTest";
+                                      "--> Use dotnet run copydir <fullPath\\\\FolderNameSource> <fullPath\\\\FolderNameDestination>\n" +
+                                      "--> Example: dotnet run copydir C:\\\\Test\\\\myFolder C:\\\\Test\\\\myFolderTest";
 
         public const string HelpTextMovedir = "Move folder on directory\n" +
-                                      "--> Use movedir <fullPath\\\\FolderNameSource> <fullPath\\\\FolderNameDestination>\n" +
-                                      "--> Example: movedir C:\\\\Test\\\\myFolder C:\\\\Test\\\\myFolderTest";
+                                      "--> Use dotnet run movedir <fullPath\\\\FolderNameSource> <fullPath\\\\FolderNameDestination>\n" +
+                                      "--> Example: dotnet run movedir C:\\\\Test\\\\myFolder C:\\\\Test\\\\myFolderTest";
 
         public const string HelpTextRmdir = "Remove folder on directory\n" +
-                                "--> Use rmdir <fullPath\\\\FolderName>\n" +
-                                "--> Example: rmdir C:\\\\Test\\\\myFolder";
+                                "--> Use dotnet run rmdir <fullPath\\\\FolderName>\n" +
+                                "--> Example: dotnet run rmdir C:\\\\Test\\\\myFolder";
 
         //Files
         public const string commandMkfile = "mkfile";
@@ -79,24 +79,24 @@
         public const string ErrorValidationPathFileAbsolute = "Absolute: .\\\\Test.txt or ..\\\\otherFolder\\\\Test.txt";
 
         public const string HelpTextMkfile = "Create file on directory\n" +
-                                          "--> Use mkfile <fullPath\\\\FileName.txt>\n" +
-                                          "--> Example: mkfile C:\\\\Test\\\\FileName.txt";
+                                          "--> Use dotnet run mkfile <fullPath\\\\FileName.txt>\n" +
+                                          "--> Example: dotnet run mkfile C:\\\\Test\\\\FileName.txt";
 
         public const string HelpTextRnfile = "Rename file on directory\n" +
-                                      "--> Use rnfile <fullPath\\\\FileName.txt> <newFileName>\n" +
-                                      "--> Example: rnfile C:\\\\Test\\\\FileName.txt myFileName";
+                                      "--> Use dotnet run rnfile <fullPath\\\\FileName.txt> <newFileName>\n" +
+                                      "--> Example: dotnet run rnfile C:\\\\Test\\\\FileName.txt myFileName";
 
         public const string HelpTextCopyfile = "Copy file on directory\n" +
-                                      "--> Use copyfile <fullPath\\\\FolderNameSource\\\\FileName.txt> <fullPath\\\\FolderNameDestination>\n" +
-                                      "--> Example: copyfile C:\\\\Test\\\\myFolder\\\\FileName.txt C:\\\\Test\\\\myFolderTest";
+                                      "--> Use dotnet run copyfile <fullPath\\\\FolderNameSource\\\\FileName.txt> <fullPath\\\\FolderNameDestination>\n" +
+                                      "--> Example: dotnet run copyfile C:\\\\Test\\\\myFolder\\\\FileName.txt C:\\\\Test\\\\myFolderTest";
 
         public const string HelpTextMovefile = "Move file on directory\n" +
-                                      "--> Use movefile <fullPath\\\\FolderNameSource\\\\FileName.txt> <fullPath\\\\FolderNameDestination>\n" +
-                                      "--> Example: movefile C:\\\\Test\\\\myFolder\\\\FileName.txt C:\\\\Test\\\\myFolderTest";
+                                      "--> Use dotnet run movefile <fullPath\\\\FolderNameSource\\\\FileName.txt> <fullPath\\\\FolderNameDestination>\n" +
+                                      "--> Example: dotnet run movefile C:\\\\Test\\\\myFolder\\\\FileName.txt C:\\\\Test\\\\myFolderTest";
 
         public const string HelpTextRmfile = "Remove file on directory\n" +
-                                "--> Use rmfile <fullPath\\\\FileName.txt>\n" +
-                                "--> Example: rmfile C:\\\\Test\\\\FileName.txt";
+                                "--> Use dotnet run rmfile <fullPath\\\\FileName.txt>\n" +
+                                "--> Example: dotnet run rmfile C:\\\\Test\\\\FileName.txt";
 
         public static void printConsole(string msg, ConsoleColor consoleColor = ConsoleColor.White)
         {
