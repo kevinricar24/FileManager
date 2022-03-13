@@ -1,3 +1,11 @@
+# How to run
+
+1. Open windows terminal
+2. Set your directory on the FileManager solution
+   > --> cd C:\<YourLocalMachine>\FileManager\FileManager\FileManager
+3. Excute any command, could you show all commands using:
+   > --> dotnet run help
+
 # FileManager
 File manager CRUD operations in .NET 6
 
@@ -7,44 +15,64 @@ Copyright (C) 2022 FileManager
   pwd         Show Current Directory
 
   mkdir       Create folder on directory
-              --> Use mkdir <fullPath\\FolderName>
-              --> Example: mkdir C:\\Test\\NewFolder
+  ```
+               --> Use dotnet run mkdir <fullPath\\FolderName>
+               --> Example: dotnet run mkdir C:\\Test\\NewFolder
+  ```
 
   rndir       Rename folder on directory
-              --> Use rndir <fullPath\\FolderName> <newFolderName>
-              --> Example: rndir C:\\Test\\myFolder myFolderTest
+  ```
+              --> Use dotnet run rndir <fullPath\\FolderName> <newFolderName>
+              --> Example: dotnet run rndir C:\\Test\\myFolder myFolderTest
+  ```
 
   copydir     Copy folder on directory
-              --> Use copydir <fullPath\\FolderNameSource> <fullPath\\FolderNameDestination>
-              --> Example: copydir C:\\Test\\myFolder C:\\Test\\myFolderTest
+  ```
+              --> Use dotnet run copydir <fullPath\\FolderNameSource> <fullPath\\FolderNameDestination>
+              --> Example: dotnet run copydir C:\\Test\\myFolder C:\\Test\\myFolderTest
+  ```
 
   movedir     Move folder on directory
-              --> Use movedir <fullPath\\FolderNameSource> <fullPath\\FolderNameDestination>
-              --> Example: movedir C:\\Test\\myFolder C:\\Test\\myFolderTest
+  ```
+              --> Use dotnet run movedir <fullPath\\FolderNameSource> <fullPath\\FolderNameDestination>
+              --> Example: dotnet run movedir C:\\Test\\myFolder C:\\Test\\myFolderTest
+  ```
 
   rmdir       Remove folder on directory
-              --> Use rmdir <fullPath\\FolderName>
-              --> Example: rmdir C:\\Test\\myFolder
+  ```
+              --> Use dotnet run rmdir <fullPath\\FolderName>
+              --> Example: dotnet run rmdir C:\\Test\\myFolder
+  ```
 
   mkfile      Create file on directory
-              --> Use mkfile <fullPath\\FileName.txt>
-              --> Example: mkfile C:\\Test\\FileName.txt
+  ```
+              --> Use dotnet run mkfile <fullPath\\FileName.txt>
+              --> Example: dotnet run mkfile C:\\Test\\FileName.txt
+  ```
 
   rnfile      Rename file on directory
-              --> Use rnfile <fullPath\\FileName.txt> <newFileName>
-              --> Example: rnfile C:\\Test\\FileName.txt myFileName
+  ```
+              --> Use dotnet run rnfile <fullPath\\FileName.txt> <newFileName>
+              --> Example: dotnet run rnfile C:\\Test\\FileName.txt myFileName
+  ```
 
   copyfile    Copy file on directory
-              --> Use copyfile <fullPath\\FolderNameSource\\FileName.txt> <fullPath\\FolderNameDestination>
-              --> Example: copyfile C:\\Test\\myFolder\\FileName.txt C:\\Test\\myFolderTest
+  ```
+              --> Use dotnet run copyfile <fullPath\\FolderNameSource\\FileName.txt> <fullPath\\FolderNameDestination>
+              --> Example: dotnet run copyfile C:\\Test\\myFolder\\FileName.txt C:\\Test\\myFolderTest
+  ```
 
   movefile    Move file on directory
-              --> Use movefile <fullPath\\FolderNameSource\\FileName.txt> <fullPath\\FolderNameDestination>
-              --> Example: movefile C:\\Test\\myFolder\\FileName.txt C:\\Test\\myFolderTest
+  ```
+              --> Use dotnet run movefile <fullPath\\FolderNameSource\\FileName.txt> <fullPath\\FolderNameDestination>
+              --> Example: dotnet run movefile C:\\Test\\myFolder\\FileName.txt C:\\Test\\myFolderTest
+  ```
 
   rmfile      Remove file on directory
-              --> Use rmfile <fullPath\\FileName.txt>
-              --> Example: rmfile C:\\Test\\FileName.txt
+  ```
+              --> Use dotnet run rmfile <fullPath\\FileName.txt>
+              --> Example: dotnet run rmfile C:\\Test\\FileName.txt
+  ```
 
   help        Display more information on a specific command.
 
