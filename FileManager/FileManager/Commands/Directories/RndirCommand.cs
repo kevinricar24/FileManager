@@ -25,7 +25,8 @@ namespace FileManager.Commands.Directories
                 else
                 {
                     string? currentPath = Path.GetDirectoryName(fullPathNameSource) ?? null;
-                    fullPathNameDestination = Path.Combine(currentPath, args[2]);
+                    string myPath = currentPath == null ? string.Empty : currentPath;
+                    fullPathNameDestination = Path.Combine(myPath, args[2]);
 
                     if (Validators.IsPathValid(fullPathNameSource))
                     {
@@ -36,7 +37,11 @@ namespace FileManager.Commands.Directories
                                 OperatingSystem os_info = Environment.OSVersion;
                                 if (os_info.Platform.ToString().ToLower().Contains("win"))
                                 {
-                                    FileSystem.Rename(fullPathNameSource, fullPathNameDestination);
+                                    string fpSource = fullPathNameSource ?? string.Empty;
+                                    string fpDestination = fullPathNameDestination ?? string.Empty;
+#pragma warning disable CA1416 // Validate platform compatibility
+                                    FileSystem.Rename(fpSource, fpDestination);
+#pragma warning restore CA1416 // Validate platform compatibility
                                     Messages.printConsole($"{Messages.directory} {fullPathNameSource} renamed to {fullPathNameDestination}", ConsoleColor.Green);
                                 }
                                 else

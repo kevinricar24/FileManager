@@ -21,7 +21,7 @@ namespace FileManager.Commands.Files
                 {
                     if (!File.Exists(fullPathName))
                     {
-                        string dir = Path.GetDirectoryName(fullPathName);
+                        string? dir = Path.GetDirectoryName(fullPathName);
                         if (Directory.Exists(dir))
                         {
                             try

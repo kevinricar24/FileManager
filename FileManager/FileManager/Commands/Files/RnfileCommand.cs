@@ -23,8 +23,10 @@ namespace FileManager.Commands.Files
                     {
                         try
                         {
-                            string currentPath = Path.GetDirectoryName(fullPathNameSource);
-                            fullPathNameDestination = Path.Combine(currentPath, args[2]);
+
+                            string? currentPath = Path.GetDirectoryName(fullPathNameSource) ?? null;
+                            string myPath = currentPath == null ? string.Empty : currentPath;
+                            fullPathNameDestination = Path.Combine(myPath, args[2]);
                             fullPathNameDestination += Messages.extension;
                             File.Move(fullPathNameSource, fullPathNameDestination);
                             Messages.printConsole($"{Messages.file} {fullPathNameSource} renamed to {fullPathNameDestination}", ConsoleColor.Green);
